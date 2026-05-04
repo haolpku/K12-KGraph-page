@@ -221,361 +221,402 @@
   <div class="container">
     <h2 class="section-title"><span class="section-num">04</span> Explore the Data</h2>
     <p class="explore-lead">
-      Real samples straight from the dataset. Switch between tabs to see
-      graph nodes, graph edges, benchmark items, and training pairs.
+      Real samples from the dataset &mdash; click a tab to switch the view.
     </p>
 
     <div class="tabs" role="tablist">
       <button class="tab-btn active" data-tab="nodes" role="tab">
-        <i class="fa-solid fa-circle-nodes"></i> Nodes
+        <i class="fa-solid fa-circle-nodes"></i><span>Nodes</span>
       </button>
       <button class="tab-btn" data-tab="edges" role="tab">
-        <i class="fa-solid fa-link"></i> Edges
+        <i class="fa-solid fa-link"></i><span>Edges</span>
       </button>
       <button class="tab-btn" data-tab="bench" role="tab">
-        <i class="fa-solid fa-list-check"></i> Benchmark
+        <i class="fa-solid fa-list-check"></i><span>Benchmark</span>
       </button>
       <button class="tab-btn" data-tab="train" role="tab">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> Training
+        <i class="fa-solid fa-wand-magic-sparkles"></i><span>Training</span>
       </button>
     </div>
 
     <!-- ===== NODES TAB ===== -->
     <div class="tab-panel active" data-panel="nodes">
-      <p class="panel-sub">
-        Seven node types cover concepts, skills, exercises, experiments, and the full
-        textbook hierarchy (section &rarr; chapter &rarr; book).
-      </p>
-
-      <div class="sample-grid sample-grid-3">
-        <div class="sample-card sc-concept">
-          <div class="sc-head">
-            <span class="sc-type">Concept</span>
-            <span class="sc-id">math_7a_rjb_cpt1</span>
-          </div>
-          <div class="sc-name">正数</div>
-          <div class="sc-field"><b>Definition:</b> 大于 0 的数叫做正数。有时为了明确意义，也可以在前面加 "+" 号。</div>
-          <div class="sc-field"><b>Importance:</b> 掌握</div>
-          <div class="sc-field"><b>Examples:</b> <code>3</code> · <code>1.8%</code> · <code>+3</code> · <code>+0.5</code></div>
-        </div>
-
-        <div class="sample-card sc-skill">
-          <div class="sc-head">
-            <span class="sc-type">Skill</span>
-            <span class="sc-id">math_7a_rjb_skl1</span>
-          </div>
-          <div class="sc-name">用正负数表示实际问题中的相反量</div>
-          <div class="sc-field"><b>Description:</b> 根据量的方向或意义（如增减、收入支出、上升下降）选择用正数或负数表达。</div>
-        </div>
-
-        <div class="sample-card sc-exercise">
-          <div class="sc-head">
-            <span class="sc-type">Exercise</span>
-            <span class="sc-id">math_7a_rjb_exe1</span>
-          </div>
-          <div class="sc-name">一个月内，小明体重增加 2kg，小华体重减少 1kg，小强体重无变化，写出他们这个月的体重增长值。</div>
-          <div class="sc-field"><b>Answer:</b> 小明: 2kg; 小华: -1kg; 小强: 0kg.</div>
-          <div class="sc-field"><b>Difficulty:</b> 1 &middot; <b>Type:</b> 应用题</div>
-        </div>
-
-        <div class="sample-card sc-book">
-          <div class="sc-head">
-            <span class="sc-type">Book</span>
-            <span class="sc-id">math_7a_rjb</span>
-          </div>
-          <div class="sc-name">七年级上册</div>
-          <div class="sc-field"><b>Subject:</b> 数学 &middot; <b>Grade:</b> 七年级上册</div>
-          <div class="sc-field"><b>Publisher:</b> 人教版 · 人民教育出版社</div>
-        </div>
-
-        <div class="sample-card sc-chapter">
-          <div class="sc-head">
-            <span class="sc-type">Chapter</span>
-            <span class="sc-id">math_7a_rjb_ch1</span>
-          </div>
-          <div class="sc-name">第一章 有理数</div>
-          <div class="sc-field sc-muted">Container node grouping sections within a book.</div>
-        </div>
-
-        <div class="sample-card sc-section">
-          <div class="sc-head">
-            <span class="sc-type">Section</span>
-            <span class="sc-id">math_7a_rjb_ch1_s1</span>
-          </div>
-          <div class="sc-name">第一节 正数和负数</div>
-          <div class="sc-field sc-muted">Leaf of the textbook hierarchy; concepts/skills anchor here via <code>appears_in</code>.</div>
-        </div>
+      <div class="panel-head">
+        <h3 class="panel-title">Seven node types</h3>
+        <p class="panel-sub">
+          Concepts, skills, exercises, and experiments are anchored within the
+          textbook hierarchy: <b>Book &rarr; Chapter &rarr; Section</b>.
+        </p>
       </div>
 
-      <div class="legend">
-        <span class="legend-item"><span class="dot d1"></span>Concept</span>
-        <span class="legend-item"><span class="dot d2"></span>Skill</span>
-        <span class="legend-item"><span class="dot d3"></span>Exercise</span>
-        <span class="legend-item"><span class="dot d4"></span>Experiment</span>
-        <span class="legend-item"><span class="dot dh"></span>Section / Chapter / Book</span>
+      <div class="node-showcase">
+        <div class="node-card" style="--node-color:#5661f2">
+          <div class="node-chip"><i class="fa-solid fa-lightbulb"></i> Concept</div>
+          <div class="node-name">正数</div>
+          <div class="node-body">大于 0 的数叫做正数。有时为了明确意义，也可以在前面加 "+" 号。</div>
+          <div class="node-foot">
+            <span class="meta-pill">Importance: 掌握</span>
+            <span class="meta-pill">Examples: <code>3</code>, <code>+0.5</code></span>
+          </div>
+        </div>
+
+        <div class="node-card" style="--node-color:#12b886">
+          <div class="node-chip"><i class="fa-solid fa-gear"></i> Skill</div>
+          <div class="node-name">用正负数表示实际问题中的相反量</div>
+          <div class="node-body">根据量的方向或意义（如增减、收入支出、上升下降）选择用正数或负数表达。</div>
+          <div class="node-foot">
+            <span class="meta-pill">Anchored via <code>tests_skill</code></span>
+          </div>
+        </div>
+
+        <div class="node-card" style="--node-color:#fd7e14">
+          <div class="node-chip"><i class="fa-solid fa-pen-to-square"></i> Exercise</div>
+          <div class="node-name">小明体重增加 2kg，小华减少 1kg，小强无变化。写出这个月的体重增长值。</div>
+          <div class="node-body"><b>Answer:</b> 小明 2kg &middot; 小华 -1kg &middot; 小强 0kg</div>
+          <div class="node-foot">
+            <span class="meta-pill">Difficulty: 1</span>
+            <span class="meta-pill">Type: 应用题</span>
+          </div>
+        </div>
+
+        <div class="node-card" style="--node-color:#e64980">
+          <div class="node-chip"><i class="fa-solid fa-flask"></i> Experiment</div>
+          <div class="node-name">实验 4-1 锌铜原电池中盐桥作用的探究</div>
+          <div class="node-body">通过对比有/无盐桥时的电流现象，验证盐桥在保持电中性、维持电路闭合中的作用。</div>
+          <div class="node-foot">
+            <span class="meta-pill"><code>verifies</code> &rarr; 盐桥</span>
+          </div>
+        </div>
+
+        <div class="node-card node-card-compact" style="--node-color:#7a8097">
+          <div class="node-chip"><i class="fa-solid fa-book"></i> Book</div>
+          <div class="node-name">七年级上册</div>
+          <div class="node-foot">
+            <span class="meta-pill">数学 &middot; 人教版</span>
+          </div>
+        </div>
+
+        <div class="node-card node-card-compact" style="--node-color:#7a8097">
+          <div class="node-chip"><i class="fa-solid fa-folder-open"></i> Chapter</div>
+          <div class="node-name">第一章 有理数</div>
+          <div class="node-foot">
+            <span class="meta-pill">contains 15 sections</span>
+          </div>
+        </div>
+
+        <div class="node-card node-card-compact" style="--node-color:#7a8097">
+          <div class="node-chip"><i class="fa-solid fa-file-lines"></i> Section</div>
+          <div class="node-name">第一节 正数和负数</div>
+          <div class="node-foot">
+            <span class="meta-pill">Leaf of the hierarchy</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- ===== EDGES TAB ===== -->
     <div class="tab-panel" data-panel="edges">
-      <p class="panel-sub">
-        Nine relation types capture how textbook knowledge hangs together, from
-        prerequisite order to which concepts an exercise actually tests.
-      </p>
+      <div class="panel-head">
+        <h3 class="panel-title">Nine relation types</h3>
+        <p class="panel-sub">
+          Every edge is traceable to textbook evidence. Hover a card to see the
+          source passage that justifies it.
+        </p>
+      </div>
 
-      <div class="edge-grid">
-        <div class="edge-row">
-          <div class="edge-type"><code>is_a</code></div>
-          <div class="edge-flow">
-            <span class="node-pill">整数</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">有理数</span>
+      <div class="edge-showcase">
+        <div class="edge-tile" style="--etype-color:#5661f2">
+          <div class="edge-tile-head"><code>is_a</code><span>taxonomy</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill">整数</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill">有理数</span>
           </div>
-          <div class="edge-note">evidence: "整数和分数统称为有理数。"</div>
+          <div class="edge-tile-evidence">"整数和分数统称为有理数。"</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>prerequisites_for</code></div>
-          <div class="edge-flow">
-            <span class="node-pill">正数</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">相反意义的量</span>
+        <div class="edge-tile" style="--etype-color:#4c6ef5">
+          <div class="edge-tile-head"><code>prerequisites_for</code><span>learning order</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill">正数</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill">相反意义的量</span>
           </div>
-          <div class="edge-note">evidence: "如果一个问题中出现相反意义的量，我们可以用正数和负数分别表示它们。"</div>
+          <div class="edge-tile-evidence">"如果一个问题中出现相反意义的量，可以用正数和负数分别表示它们。"</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>relates_to</code></div>
-          <div class="edge-flow">
-            <span class="node-pill">正数</span>
-            <span class="arrow">&harr;</span>
-            <span class="node-pill">负数</span>
+        <div class="edge-tile" style="--etype-color:#22b8cf">
+          <div class="edge-tile-head"><code>relates_to</code><span>association</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill">正数</span>
+            <span class="earrow"><i class="fa-solid fa-left-right"></i></span>
+            <span class="epill">负数</span>
           </div>
-          <div class="edge-note">relation: "正数与负数是相对的概念" &middot; evidence: "'负'与'正'相对。"</div>
+          <div class="edge-tile-evidence">"正数与负数是相对的概念；'负'与'正'相对。"</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>tests_concept</code></div>
-          <div class="edge-flow">
-            <span class="node-pill pill-exe">Exercise math_7a_rjb_exe1</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">正数</span>
-            <span class="node-pill">负数</span>
-            <span class="node-pill">0</span>
+        <div class="edge-tile" style="--etype-color:#fd7e14">
+          <div class="edge-tile-head"><code>tests_concept</code><span>exercise &rarr; concepts</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill epill-exe">Exercise #1</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill-cluster">
+              <span class="epill">正数</span>
+              <span class="epill">负数</span>
+              <span class="epill">0</span>
+            </span>
           </div>
-          <div class="edge-note">One exercise can point to multiple concepts it exercises.</div>
+          <div class="edge-tile-evidence">One exercise probes multiple concepts at once.</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>tests_skill</code></div>
-          <div class="edge-flow">
-            <span class="node-pill pill-exe">Exercise math_7a_rjb_exe1</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill pill-skl">用正负数表示实际问题中的相反量</span>
+        <div class="edge-tile" style="--etype-color:#e64980">
+          <div class="edge-tile-head"><code>tests_skill</code><span>exercise &rarr; skill</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill epill-exe">Exercise #1</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill epill-skl">用正负数表示相反量</span>
           </div>
-          <div class="edge-note">Links each exercise to the skill it is designed to practise.</div>
+          <div class="edge-tile-evidence">Maps exercises to the skill they practise.</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>appears_in</code></div>
-          <div class="edge-flow">
-            <span class="node-pill">正数</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill pill-sec">第一节 正数和负数</span>
+        <div class="edge-tile" style="--etype-color:#12b886">
+          <div class="edge-tile-head"><code>verifies</code><span>experiment &rarr; law</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill epill-exp">实验 4-1</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill">盐桥作用</span>
           </div>
-          <div class="edge-note">Grounds every concept/skill/exercise back to a textbook section.</div>
+          <div class="edge-tile-evidence">Links lab experiments to the concept they verify.</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>is_part_of</code></div>
-          <div class="edge-flow">
-            <span class="node-pill pill-sec">第一节 正数和负数</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill pill-sec">第一章 有理数</span>
+        <div class="edge-tile" style="--etype-color:#868e96">
+          <div class="edge-tile-head"><code>appears_in</code><span>grounding</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill">正数</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill epill-sec">第一节 正数和负数</span>
           </div>
-          <div class="edge-note">Hierarchy spine: Section &rarr; Chapter &rarr; Book.</div>
+          <div class="edge-tile-evidence">Anchors every node back to its textbook section.</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>verifies</code></div>
-          <div class="edge-flow">
-            <span class="node-pill pill-exp">Experiment</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">Concept / Law</span>
+        <div class="edge-tile" style="--etype-color:#adb5bd">
+          <div class="edge-tile-head"><code>is_part_of</code><span>hierarchy</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill epill-sec">第一节</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill epill-sec">第一章</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill epill-sec">七年级上册</span>
           </div>
-          <div class="edge-note">Typical in Physics / Chemistry / Biology, e.g. 实验 4-1 verifies 盐桥作用.</div>
+          <div class="edge-tile-evidence">Section &rarr; Chapter &rarr; Book spine.</div>
         </div>
 
-        <div class="edge-row">
-          <div class="edge-type"><code>leads_to</code></div>
-          <div class="edge-flow">
-            <span class="node-pill">Earlier concept</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">Later concept</span>
+        <div class="edge-tile" style="--etype-color:#fab005">
+          <div class="edge-tile-head"><code>leads_to</code><span>progression</span></div>
+          <div class="edge-tile-flow">
+            <span class="epill">有理数</span>
+            <span class="earrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="epill">实数</span>
           </div>
-          <div class="edge-note">Cross-chapter conceptual progression within a subject.</div>
+          <div class="edge-tile-evidence">Cross-chapter conceptual progression.</div>
         </div>
       </div>
     </div>
 
     <!-- ===== BENCHMARK TAB ===== -->
     <div class="tab-panel" data-panel="bench">
-      <p class="panel-sub">
-        All K12-Bench items are multi-select. Each item is derived from a KG subgraph,
-        so the answer key is auditable and distractors can be generated systematically.
-      </p>
+      <div class="panel-head">
+        <h3 class="panel-title">Five task families on K12-Bench</h3>
+        <p class="panel-sub">
+          Each question is deterministically derived from a KG subgraph, so
+          answer keys are auditable and distractors are systematic.
+        </p>
+      </div>
 
-      <div class="q-grid">
+      <div class="bench-showcase">
         <!-- Task 1 -->
-        <div class="q-card">
-          <div class="q-task"><span class="q-tag t1">Task 1 · Ground</span> <span class="q-meta">Physics</span></div>
-          <div class="q-stem">【写出 Po-210 的 β 衰变方程。】这道题考察了什么核心方法？</div>
-          <ul class="q-opts">
-            <li><span class="opt-key">A</span> 根据光电效应方程分析实验规律</li>
-            <li><span class="opt-key">B</span> 统计分析方法</li>
-            <li><span class="opt-key">C</span> 能量守恒分析方法</li>
-            <li class="opt-correct"><span class="opt-key">D</span> 核反应方程书写方法 <i class="fa-solid fa-check"></i></li>
-          </ul>
-          <div class="q-ans"><b>Answer:</b> D</div>
+        <div class="bench-tile" style="--bt-color-1:#5661f2;--bt-color-2:#4b57e3">
+          <div class="bench-tile-head">
+            <div class="bench-tile-num">01</div>
+            <div class="bench-tile-meta">
+              <div class="bench-tile-task">Ground</div>
+              <div class="bench-tile-desc">Which concepts/skills does this problem actually test?</div>
+            </div>
+            <div class="bench-tile-subject"><i class="fa-solid fa-atom"></i> Physics</div>
+          </div>
+          <div class="bench-tile-stem">【写出 Po-210 的 β 衰变方程。】这道题考察了什么核心方法？</div>
+          <div class="bench-tile-opts">
+            <div class="bopt"><span class="bopt-key">A</span> 光电效应方程分析</div>
+            <div class="bopt"><span class="bopt-key">B</span> 统计分析方法</div>
+            <div class="bopt"><span class="bopt-key">C</span> 能量守恒分析</div>
+            <div class="bopt bopt-ok"><span class="bopt-key">D</span> 核反应方程书写方法 <i class="fa-solid fa-circle-check"></i></div>
+          </div>
         </div>
 
         <!-- Task 2 -->
-        <div class="q-card">
-          <div class="q-task"><span class="q-tag t2">Task 2 · Prereq</span> <span class="q-meta">Physics</span></div>
-          <div class="q-stem">要掌握物理中的【熵】，应先具备哪些基础？</div>
-          <ul class="q-opts">
-            <li class="opt-correct"><span class="opt-key">A</span> 微观态与宏观态 <i class="fa-solid fa-check"></i></li>
-            <li><span class="opt-key">B</span> 熵增加原理</li>
-            <li><span class="opt-key">C</span> 热力学第二定律</li>
-            <li><span class="opt-key">D</span> 功与热的等效性</li>
-          </ul>
-          <div class="q-ans"><b>Answer:</b> A</div>
+        <div class="bench-tile" style="--bt-color-1:#22b8cf;--bt-color-2:#0ca6ba">
+          <div class="bench-tile-head">
+            <div class="bench-tile-num">02</div>
+            <div class="bench-tile-meta">
+              <div class="bench-tile-task">Prereq</div>
+              <div class="bench-tile-desc">What must be learned before this concept?</div>
+            </div>
+            <div class="bench-tile-subject"><i class="fa-solid fa-fire"></i> Physics</div>
+          </div>
+          <div class="bench-tile-stem">要掌握物理中的【熵】，应先具备哪些基础？</div>
+          <div class="bench-tile-opts">
+            <div class="bopt bopt-ok"><span class="bopt-key">A</span> 微观态与宏观态 <i class="fa-solid fa-circle-check"></i></div>
+            <div class="bopt"><span class="bopt-key">B</span> 熵增加原理</div>
+            <div class="bopt"><span class="bopt-key">C</span> 热力学第二定律</div>
+            <div class="bopt"><span class="bopt-key">D</span> 功与热的等效性</div>
+          </div>
         </div>
 
         <!-- Task 3 -->
-        <div class="q-card">
-          <div class="q-task"><span class="q-tag t3">Task 3 · Neighbor</span> <span class="q-meta">Biology</span></div>
-          <div class="q-stem">以下哪些概念与生物学中的【多倍体】<b>直接相关</b>（包括分类关系或紧密关联）？</div>
-          <ul class="q-opts">
-            <li class="opt-correct"><span class="opt-key">A</span> 三倍体不育（无子果实形成原因） <i class="fa-solid fa-check"></i></li>
-            <li class="opt-correct"><span class="opt-key">B</span> 四倍体 <i class="fa-solid fa-check"></i></li>
-            <li class="opt-correct"><span class="opt-key">C</span> 染色体组（非同源染色体组） <i class="fa-solid fa-check"></i></li>
-            <li class="opt-correct"><span class="opt-key">D</span> 人工诱导多倍体 <i class="fa-solid fa-check"></i></li>
-          </ul>
-          <div class="q-ans"><b>Answer:</b> A, B, C, D</div>
+        <div class="bench-tile" style="--bt-color-1:#51cf66;--bt-color-2:#2fa84f">
+          <div class="bench-tile-head">
+            <div class="bench-tile-num">03</div>
+            <div class="bench-tile-meta">
+              <div class="bench-tile-task">Neighbor</div>
+              <div class="bench-tile-desc">Which concepts are structurally adjacent in the KG?</div>
+            </div>
+            <div class="bench-tile-subject"><i class="fa-solid fa-dna"></i> Biology</div>
+          </div>
+          <div class="bench-tile-stem">以下哪些概念与生物学中的【多倍体】<b>直接相关</b>（包括分类关系或紧密关联）？</div>
+          <div class="bench-tile-opts">
+            <div class="bopt bopt-ok"><span class="bopt-key">A</span> 三倍体不育 <i class="fa-solid fa-circle-check"></i></div>
+            <div class="bopt bopt-ok"><span class="bopt-key">B</span> 四倍体 <i class="fa-solid fa-circle-check"></i></div>
+            <div class="bopt bopt-ok"><span class="bopt-key">C</span> 染色体组 <i class="fa-solid fa-circle-check"></i></div>
+            <div class="bopt bopt-ok"><span class="bopt-key">D</span> 人工诱导多倍体 <i class="fa-solid fa-circle-check"></i></div>
+          </div>
         </div>
 
         <!-- Task 4 -->
-        <div class="q-card">
-          <div class="q-task"><span class="q-tag t4">Task 4 · Evidence</span> <span class="q-meta">Chemistry</span></div>
-          <div class="q-stem">以下哪些实验可以验证【盐桥】？</div>
-          <ul class="q-opts">
-            <li><span class="opt-key">A</span> 牺牲阳极法电解实验（实验 4-4 部分）</li>
-            <li class="opt-correct"><span class="opt-key">B</span> 实验 4-1 锌铜原电池中盐桥作用的探究 <i class="fa-solid fa-check"></i></li>
-            <li><span class="opt-key">C</span> 铁钉的吸氧腐蚀实验（实验 4-3 部分）</li>
-            <li><span class="opt-key">D</span> CuCl₂ 溶液的电解实验（实验 4-2）</li>
-          </ul>
-          <div class="q-ans"><b>Answer:</b> B</div>
+        <div class="bench-tile" style="--bt-color-1:#ffa94d;--bt-color-2:#fd7e14">
+          <div class="bench-tile-head">
+            <div class="bench-tile-num">04</div>
+            <div class="bench-tile-meta">
+              <div class="bench-tile-task">Evidence</div>
+              <div class="bench-tile-desc">Which textbook experiment supports this claim?</div>
+            </div>
+            <div class="bench-tile-subject"><i class="fa-solid fa-flask"></i> Chemistry</div>
+          </div>
+          <div class="bench-tile-stem">以下哪些实验可以验证【盐桥】？</div>
+          <div class="bench-tile-opts">
+            <div class="bopt"><span class="bopt-key">A</span> 牺牲阳极法电解实验</div>
+            <div class="bopt bopt-ok"><span class="bopt-key">B</span> 实验 4-1 锌铜原电池中盐桥作用的探究 <i class="fa-solid fa-circle-check"></i></div>
+            <div class="bopt"><span class="bopt-key">C</span> 铁钉的吸氧腐蚀实验</div>
+            <div class="bopt"><span class="bopt-key">D</span> CuCl₂ 溶液的电解实验</div>
+          </div>
         </div>
 
         <!-- Task 5 -->
-        <div class="q-card">
-          <div class="q-task"><span class="q-tag t5">Task 5 · Locate</span> <span class="q-meta">Physics</span></div>
-          <div class="q-stem">学生第一次学习物理中的【熵】是在以下哪个章节？</div>
-          <ul class="q-opts">
-            <li><span class="opt-key">A</span> 第二节 热力学第一定律</li>
-            <li class="opt-correct"><span class="opt-key">B</span> 第四节 热力学第二定律 <i class="fa-solid fa-check"></i></li>
-            <li><span class="opt-key">C</span> 第三节 能量守恒定律</li>
-            <li><span class="opt-key">D</span> 第一节 功、热和内能的改变</li>
-          </ul>
-          <div class="q-ans"><b>Answer:</b> B</div>
-        </div>
-
-        <!-- Bonus: Task 4 subtask 1 alt -->
-        <div class="q-card">
-          <div class="q-task"><span class="q-tag t4">Task 4 · Evidence</span> <span class="q-meta">Chemistry</span></div>
-          <div class="q-stem">教材中哪个实验验证了【盐的类型】原理？</div>
-          <ul class="q-opts">
-            <li><span class="opt-key">A</span> 反应条件对 FeCl₃ 水解平衡的影响</li>
-            <li><span class="opt-key">B</span> 实验 3-2 醋酸与碳酸钠溶液反应</li>
-            <li><span class="opt-key">C</span> 实验 3-1 比较盐酸和醋酸的电离程度</li>
-            <li class="opt-correct"><span class="opt-key">D</span> 不同盐溶液酸碱性的测试与分类 <i class="fa-solid fa-check"></i></li>
-          </ul>
-          <div class="q-ans"><b>Answer:</b> D</div>
+        <div class="bench-tile" style="--bt-color-1:#f06595;--bt-color-2:#d6336c">
+          <div class="bench-tile-head">
+            <div class="bench-tile-num">05</div>
+            <div class="bench-tile-meta">
+              <div class="bench-tile-task">Locate</div>
+              <div class="bench-tile-desc">Where in the textbook does this appear first?</div>
+            </div>
+            <div class="bench-tile-subject"><i class="fa-solid fa-fire"></i> Physics</div>
+          </div>
+          <div class="bench-tile-stem">学生第一次学习物理中的【熵】是在以下哪个章节？</div>
+          <div class="bench-tile-opts">
+            <div class="bopt"><span class="bopt-key">A</span> 第二节 热力学第一定律</div>
+            <div class="bopt bopt-ok"><span class="bopt-key">B</span> 第四节 热力学第二定律 <i class="fa-solid fa-circle-check"></i></div>
+            <div class="bopt"><span class="bopt-key">C</span> 第三节 能量守恒定律</div>
+            <div class="bopt"><span class="bopt-key">D</span> 第一节 功、热和内能的改变</div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ===== TRAIN TAB ===== -->
     <div class="tab-panel" data-panel="train">
-      <p class="panel-sub">
-        K12-Train pairs are synthesized by anchoring a question / answer to a concept
-        (node-centric) or a relation (edge-centric) drawn from K12-KGraph. Both styles
-        keep the answer grounded in textbook knowledge.
-      </p>
-
-      <div class="train-grid">
-
-        <div class="train-card">
-          <div class="tc-head">
-            <span class="tc-badge tc-node">Node-centric</span>
-            <span class="tc-id">node_item_1</span>
-          </div>
-          <div class="tc-anchor"><b>Anchor concept:</b> <span class="node-pill">秒</span></div>
-          <div class="tc-q"><b>Q:</b> 秒是什么时间单位？</div>
-          <div class="tc-a"><b>A:</b> <span class="boxed">秒是一种计量很短时间的基本单位</span>。它是我们用来测量瞬间或短暂事件的时间单位。</div>
-        </div>
-
-        <div class="train-card">
-          <div class="tc-head">
-            <span class="tc-badge tc-edge">Edge-centric</span>
-            <span class="tc-id">edge_item_1</span>
-          </div>
-          <div class="tc-anchor">
-            <b>Anchor edge:</b>
-            <code>is_a</code>
-            <span class="node-pill">毫米</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">厘米</span>
-          </div>
-          <div class="tc-q"><b>Q:</b> 为什么说毫米是厘米的更小单位？</div>
-          <div class="tc-a"><b>A:</b> 因为厘米是长度单位，毫米也是长度单位，且 1 厘米等于 10 毫米，所以毫米是厘米的更小单位。</div>
-        </div>
-
-        <div class="train-card">
-          <div class="tc-head">
-            <span class="tc-badge tc-node">Node-centric</span>
-            <span class="tc-id">example (math)</span>
-          </div>
-          <div class="tc-anchor"><b>Anchor concept:</b> <span class="node-pill">有理数</span></div>
-          <div class="tc-q"><b>Q:</b> 什么是有理数？它和整数、分数之间是什么关系？</div>
-          <div class="tc-a"><b>A:</b> <span class="boxed">整数和分数统称为有理数</span>。也就是说，整数和分数都是有理数的子集，它们合在一起构成有理数这一更大的类别。</div>
-        </div>
-
-        <div class="train-card">
-          <div class="tc-head">
-            <span class="tc-badge tc-edge">Edge-centric</span>
-            <span class="tc-id">example (physics)</span>
-          </div>
-          <div class="tc-anchor">
-            <b>Anchor edge:</b>
-            <code>prerequisites_for</code>
-            <span class="node-pill">微观态与宏观态</span>
-            <span class="arrow">&rarr;</span>
-            <span class="node-pill">熵</span>
-          </div>
-          <div class="tc-q"><b>Q:</b> 在学习"熵"之前，为什么应该先掌握"微观态与宏观态"？</div>
-          <div class="tc-a"><b>A:</b> 熵从微观角度描述了一个宏观态对应的微观态数目的多少。没有"微观态与宏观态"这一前置概念，就无法从统计力学的角度理解熵所度量的"无序程度"。</div>
-        </div>
+      <div class="panel-head">
+        <h3 class="panel-title">KG-guided SFT pairs</h3>
+        <p class="panel-sub">
+          Each training example anchors a <b>node</b> (definition-style) or an
+          <b>edge</b> (relational reasoning) from K12-KGraph.
+        </p>
       </div>
 
-      <div class="train-callout">
-        <i class="fa-solid fa-seedling"></i>
-        <div>
-          Despite being small (~2,300 pairs), K12-Train consistently outperforms
-          equally sized subsets of <b>eight mainstream SFT corpora</b> on GaokaoBench
-          and EduEval across two backbones.
+      <div class="train-showcase">
+
+        <div class="chat-card">
+          <div class="chat-anchor">
+            <span class="chat-badge chat-node"><i class="fa-solid fa-lightbulb"></i> Node-centric</span>
+            <span class="chat-anchor-tag">anchor: <span class="node-pill">有理数</span></span>
+          </div>
+          <div class="chat-bubble chat-q">
+            <div class="chat-role">Question</div>
+            <div class="chat-text">什么是有理数？它和整数、分数之间是什么关系？</div>
+          </div>
+          <div class="chat-bubble chat-a">
+            <div class="chat-role">Answer</div>
+            <div class="chat-text"><span class="boxed">整数和分数统称为有理数</span>。也就是说，整数和分数都是有理数的子集，它们合在一起构成有理数这一更大的类别。</div>
+          </div>
         </div>
+
+        <div class="chat-card">
+          <div class="chat-anchor">
+            <span class="chat-badge chat-edge"><i class="fa-solid fa-link"></i> Edge-centric</span>
+            <span class="chat-anchor-tag">
+              anchor:
+              <span class="node-pill">微观态与宏观态</span>
+              <i class="fa-solid fa-arrow-right small-arrow"></i>
+              <code>prerequisites_for</code>
+              <i class="fa-solid fa-arrow-right small-arrow"></i>
+              <span class="node-pill">熵</span>
+            </span>
+          </div>
+          <div class="chat-bubble chat-q">
+            <div class="chat-role">Question</div>
+            <div class="chat-text">在学习"熵"之前，为什么应该先掌握"微观态与宏观态"？</div>
+          </div>
+          <div class="chat-bubble chat-a">
+            <div class="chat-role">Answer</div>
+            <div class="chat-text">熵从微观角度描述了一个宏观态对应的微观态数目的多少。没有"微观态与宏观态"这一前置概念，就无法从统计力学的角度理解熵所度量的"无序程度"。</div>
+          </div>
+        </div>
+
+        <div class="chat-card">
+          <div class="chat-anchor">
+            <span class="chat-badge chat-node"><i class="fa-solid fa-lightbulb"></i> Node-centric</span>
+            <span class="chat-anchor-tag">anchor: <span class="node-pill">秒</span></span>
+          </div>
+          <div class="chat-bubble chat-q">
+            <div class="chat-role">Question</div>
+            <div class="chat-text">秒是什么时间单位？</div>
+          </div>
+          <div class="chat-bubble chat-a">
+            <div class="chat-role">Answer</div>
+            <div class="chat-text"><span class="boxed">秒是一种计量很短时间的基本单位</span>。它是我们用来测量瞬间或短暂事件的时间单位。</div>
+          </div>
+        </div>
+
+        <div class="chat-card">
+          <div class="chat-anchor">
+            <span class="chat-badge chat-edge"><i class="fa-solid fa-link"></i> Edge-centric</span>
+            <span class="chat-anchor-tag">
+              anchor:
+              <span class="node-pill">毫米</span>
+              <i class="fa-solid fa-arrow-right small-arrow"></i>
+              <code>is_a</code>
+              <i class="fa-solid fa-arrow-right small-arrow"></i>
+              <span class="node-pill">厘米</span>
+            </span>
+          </div>
+          <div class="chat-bubble chat-q">
+            <div class="chat-role">Question</div>
+            <div class="chat-text">为什么说毫米是厘米的更小单位？</div>
+          </div>
+          <div class="chat-bubble chat-a">
+            <div class="chat-role">Answer</div>
+            <div class="chat-text">因为厘米是长度单位，毫米也是长度单位，且 1 厘米等于 10 毫米，所以毫米是厘米的更小单位。</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -626,10 +667,214 @@
   </div>
 </section>
 
-<!-- ================= EXAMPLE ================= -->
-<section id="example" class="section">
+<!-- ================= TRAINING RESULTS ================= -->
+<section id="training-results" class="section">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">06</span> Example</h2>
+    <h2 class="section-title"><span class="section-num">06</span> Experimental Results</h2>
+    <p class="results-lead">
+      K12-Train is compared against eight mainstream instruction-tuning corpora under a
+      matched <b>2,300-sample budget</b> on two base models. All results in one place.
+    </p>
+
+    <div class="rtabs" role="tablist">
+      <button class="rtab-btn active" data-rtab="bench">
+        <i class="fa-solid fa-trophy"></i><span>K12-Bench Leaderboard</span>
+      </button>
+      <button class="rtab-btn" data-rtab="gaokao">
+        <i class="fa-solid fa-graduation-cap"></i><span>GaokaoBench</span>
+      </button>
+      <button class="rtab-btn" data-rtab="edueval">
+        <i class="fa-solid fa-school"></i><span>EduEval</span>
+      </button>
+    </div>
+
+    <!-- ===== K12-Bench Leaderboard ===== -->
+    <div class="rpanel active" data-rpanel="bench">
+      <p class="rpanel-sub">
+        Zero-shot, answer-only. Exact-match (EM) over 23,640 multi-select items across 5
+        task families. Even the strongest model reaches just <b>57.1%</b>.
+      </p>
+
+      <div class="lb-wrap">
+        <div class="lb-group">
+          <div class="lb-group-title"><i class="fa-brands fa-osi"></i> Open-source models</div>
+          <div class="lb-row"><div class="lb-name">Meta-LLaMA-3-8B-Instruct</div>
+            <div class="lb-bar-wrap"><div class="lb-bar" style="width:7.2%"></div><div class="lb-val">7.2%</div></div></div>
+          <div class="lb-row"><div class="lb-name">GLM-4.7-Flash</div>
+            <div class="lb-bar-wrap"><div class="lb-bar" style="width:31.7%"></div><div class="lb-val">31.7%</div></div></div>
+          <div class="lb-row"><div class="lb-name">Ministral-3-14B-Instruct</div>
+            <div class="lb-bar-wrap"><div class="lb-bar" style="width:37.5%"></div><div class="lb-val">37.5%</div></div></div>
+          <div class="lb-row"><div class="lb-name">Qwen3-32B</div>
+            <div class="lb-bar-wrap"><div class="lb-bar" style="width:42.6%"></div><div class="lb-val">42.6%</div></div></div>
+          <div class="lb-row lb-row-best"><div class="lb-name">Gemma-4-31B-IT <span class="lb-crown"><i class="fa-solid fa-crown"></i></span></div>
+            <div class="lb-bar-wrap"><div class="lb-bar lb-bar-best" style="width:46.4%"></div><div class="lb-val">46.4%</div></div></div>
+        </div>
+
+        <div class="lb-group">
+          <div class="lb-group-title"><i class="fa-solid fa-building-columns"></i> Proprietary APIs</div>
+          <div class="lb-row"><div class="lb-name">GPT-4o</div>
+            <div class="lb-bar-wrap"><div class="lb-bar lb-bar-api" style="width:31.1%"></div><div class="lb-val">31.1%</div></div></div>
+          <div class="lb-row"><div class="lb-name">GPT-5-mini</div>
+            <div class="lb-bar-wrap"><div class="lb-bar lb-bar-api" style="width:31.7%"></div><div class="lb-val">31.7%</div></div></div>
+          <div class="lb-row"><div class="lb-name">GPT-5.2</div>
+            <div class="lb-bar-wrap"><div class="lb-bar lb-bar-api" style="width:42.8%"></div><div class="lb-val">42.8%</div></div></div>
+          <div class="lb-row"><div class="lb-name">Gemini-2.5-Flash</div>
+            <div class="lb-bar-wrap"><div class="lb-bar lb-bar-api" style="width:48.3%"></div><div class="lb-val">48.3%</div></div></div>
+          <div class="lb-row lb-row-best"><div class="lb-name">Gemini-3-Flash <span class="lb-crown"><i class="fa-solid fa-crown"></i></span></div>
+            <div class="lb-bar-wrap"><div class="lb-bar lb-bar-api-best" style="width:57.1%"></div><div class="lb-val">57.1%</div></div></div>
+        </div>
+      </div>
+
+      <div class="lb-legend">
+        <span><span class="lb-dot lb-dot-os"></span>Open-source</span>
+        <span><span class="lb-dot lb-dot-api"></span>Proprietary</span>
+        <span><i class="fa-solid fa-crown"></i> Best in family</span>
+        <span class="lb-legend-sep">x-axis: overall Exact-Match on K12-Bench</span>
+      </div>
+    </div>
+
+    <!-- ===== GaokaoBench ===== -->
+    <div class="rpanel" data-rpanel="gaokao">
+      <p class="rpanel-sub">
+        Total score across 10 subjects after SFT on <b>2,300 samples</b> from each corpus.
+        K12-Train wins on both backbones.
+      </p>
+
+      <div class="chart-duo">
+        <!-- Qwen3-4B -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title">Qwen3-4B-Base</div>
+            <div class="chart-tag">Total / 1,200</div>
+          </div>
+          <div class="chart-body">
+            <div class="cbar"><div class="cbar-name">Base (no SFT)</div><div class="cbar-wrap"><div class="cbar-fill cbar-dim" style="width:37.1%"></div></div><div class="cbar-val">445.4</div></div>
+            <div class="cbar"><div class="cbar-name">Qwen3-4B-Instruct</div><div class="cbar-wrap"><div class="cbar-fill cbar-instruct" style="width:74.6%"></div></div><div class="cbar-val">895.4</div></div>
+            <div class="cbar-divider"><span>+ 2,300 SFT samples from:</span></div>
+            <div class="cbar"><div class="cbar-name">LMSYS</div><div class="cbar-wrap"><div class="cbar-fill" style="width:65.2%"></div></div><div class="cbar-val">782.4</div></div>
+            <div class="cbar"><div class="cbar-name">UltraChat</div><div class="cbar-wrap"><div class="cbar-fill" style="width:75.2%"></div></div><div class="cbar-val">902.6</div></div>
+            <div class="cbar"><div class="cbar-name">WizardLM</div><div class="cbar-wrap"><div class="cbar-fill" style="width:76.9%"></div></div><div class="cbar-val">922.8</div></div>
+            <div class="cbar"><div class="cbar-name">Tulu-3-SFT</div><div class="cbar-wrap"><div class="cbar-fill" style="width:79.3%"></div></div><div class="cbar-val">951.7</div></div>
+            <div class="cbar"><div class="cbar-name">Infinity-Instruct</div><div class="cbar-wrap"><div class="cbar-fill" style="width:79.5%"></div></div><div class="cbar-val">953.7</div></div>
+            <div class="cbar"><div class="cbar-name">SmolTalk</div><div class="cbar-wrap"><div class="cbar-fill" style="width:80.3%"></div></div><div class="cbar-val">963.6</div></div>
+            <div class="cbar"><div class="cbar-name">OpenHermes-2.5</div><div class="cbar-wrap"><div class="cbar-fill" style="width:80.6%"></div></div><div class="cbar-val">966.8</div></div>
+            <div class="cbar"><div class="cbar-name">DataFlow-10K</div><div class="cbar-wrap"><div class="cbar-fill" style="width:82.2%"></div></div><div class="cbar-val">985.9</div></div>
+            <div class="cbar cbar-best"><div class="cbar-name">K12-Train (ours) <i class="fa-solid fa-trophy"></i></div><div class="cbar-wrap"><div class="cbar-fill cbar-ours" style="width:84.2%"></div></div><div class="cbar-val">1009.96</div></div>
+          </div>
+          <div class="chart-delta">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <b>+24.1</b> over strongest baseline (DataFlow) &middot;
+            <b>+114.6</b> over Qwen3-4B-Instruct
+          </div>
+        </div>
+
+        <!-- Llama3.1-8B -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title">Llama3.1-8B-Base</div>
+            <div class="chart-tag">Total / 1,200</div>
+          </div>
+          <div class="chart-body">
+            <div class="cbar"><div class="cbar-name">Base (no SFT)</div><div class="cbar-wrap"><div class="cbar-fill cbar-dim" style="width:10.9%"></div></div><div class="cbar-val">130.8</div></div>
+            <div class="cbar"><div class="cbar-name">Llama3.1-8B-Instruct</div><div class="cbar-wrap"><div class="cbar-fill cbar-instruct" style="width:33.7%"></div></div><div class="cbar-val">404.5</div></div>
+            <div class="cbar-divider"><span>+ 2,300 SFT samples from:</span></div>
+            <div class="cbar"><div class="cbar-name">LMSYS</div><div class="cbar-wrap"><div class="cbar-fill" style="width:33.5%"></div></div><div class="cbar-val">402.6</div></div>
+            <div class="cbar"><div class="cbar-name">SmolTalk</div><div class="cbar-wrap"><div class="cbar-fill" style="width:46.3%"></div></div><div class="cbar-val">555.6</div></div>
+            <div class="cbar"><div class="cbar-name">Infinity-Instruct</div><div class="cbar-wrap"><div class="cbar-fill" style="width:47.8%"></div></div><div class="cbar-val">573.3</div></div>
+            <div class="cbar"><div class="cbar-name">OpenHermes-2.5</div><div class="cbar-wrap"><div class="cbar-fill" style="width:48.3%"></div></div><div class="cbar-val">580.2</div></div>
+            <div class="cbar"><div class="cbar-name">DataFlow-10K</div><div class="cbar-wrap"><div class="cbar-fill" style="width:48.8%"></div></div><div class="cbar-val">585.0</div></div>
+            <div class="cbar"><div class="cbar-name">Tulu-3-SFT</div><div class="cbar-wrap"><div class="cbar-fill" style="width:48.9%"></div></div><div class="cbar-val">587.0</div></div>
+            <div class="cbar"><div class="cbar-name">UltraChat</div><div class="cbar-wrap"><div class="cbar-fill" style="width:49.4%"></div></div><div class="cbar-val">592.2</div></div>
+            <div class="cbar"><div class="cbar-name">WizardLM</div><div class="cbar-wrap"><div class="cbar-fill" style="width:49.4%"></div></div><div class="cbar-val">593.1</div></div>
+            <div class="cbar cbar-best"><div class="cbar-name">K12-Train (ours) <i class="fa-solid fa-trophy"></i></div><div class="cbar-wrap"><div class="cbar-fill cbar-ours" style="width:52.1%"></div></div><div class="cbar-val">625.49</div></div>
+          </div>
+          <div class="chart-delta">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <b>+32.4</b> over strongest baseline (WizardLM) &middot;
+            <b>+220.9</b> over Llama3.1-8B-Instruct
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EduEval ===== -->
+    <div class="rpanel" data-rpanel="edueval">
+      <p class="rpanel-sub">
+        Average across 18 educational sub-tasks covering 5 capability dimensions
+        (Application / Ethics / Memory / Reasoning / Understanding).
+      </p>
+
+      <div class="chart-duo">
+        <!-- Qwen3-4B -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title">Qwen3-4B-Base</div>
+            <div class="chart-tag">EduEval Avg / 100</div>
+          </div>
+          <div class="chart-body">
+            <div class="cbar"><div class="cbar-name">Base (no SFT)</div><div class="cbar-wrap"><div class="cbar-fill cbar-dim" style="width:34.5%"></div></div><div class="cbar-val">34.5</div></div>
+            <div class="cbar"><div class="cbar-name">Qwen3-4B-Instruct</div><div class="cbar-wrap"><div class="cbar-fill cbar-instruct" style="width:66.3%"></div></div><div class="cbar-val">66.30</div></div>
+            <div class="cbar-divider"><span>+ 2,300 SFT samples from:</span></div>
+            <div class="cbar"><div class="cbar-name">LMSYS</div><div class="cbar-wrap"><div class="cbar-fill" style="width:64.7%"></div></div><div class="cbar-val">64.68</div></div>
+            <div class="cbar"><div class="cbar-name">UltraChat</div><div class="cbar-wrap"><div class="cbar-fill" style="width:65.4%"></div></div><div class="cbar-val">65.44</div></div>
+            <div class="cbar"><div class="cbar-name">DataFlow-10K</div><div class="cbar-wrap"><div class="cbar-fill" style="width:65.6%"></div></div><div class="cbar-val">65.57</div></div>
+            <div class="cbar"><div class="cbar-name">OpenHermes-2.5</div><div class="cbar-wrap"><div class="cbar-fill" style="width:66.0%"></div></div><div class="cbar-val">66.01</div></div>
+            <div class="cbar"><div class="cbar-name">Infinity-Instruct</div><div class="cbar-wrap"><div class="cbar-fill" style="width:66.0%"></div></div><div class="cbar-val">66.04</div></div>
+            <div class="cbar"><div class="cbar-name">SmolTalk</div><div class="cbar-wrap"><div class="cbar-fill" style="width:66.1%"></div></div><div class="cbar-val">66.10</div></div>
+            <div class="cbar"><div class="cbar-name">Tulu-3-SFT</div><div class="cbar-wrap"><div class="cbar-fill" style="width:66.3%"></div></div><div class="cbar-val">66.27</div></div>
+            <div class="cbar"><div class="cbar-name">WizardLM</div><div class="cbar-wrap"><div class="cbar-fill" style="width:66.7%"></div></div><div class="cbar-val">66.70</div></div>
+            <div class="cbar cbar-best"><div class="cbar-name">K12-Train (ours) <i class="fa-solid fa-trophy"></i></div><div class="cbar-wrap"><div class="cbar-fill cbar-ours" style="width:66.8%"></div></div><div class="cbar-val">66.76</div></div>
+          </div>
+          <div class="chart-delta">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            Best average + <b>strongest Ethics</b> scores among all 2.3k-budget runs.
+          </div>
+        </div>
+
+        <!-- Llama3.1-8B -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title">Llama3.1-8B-Base</div>
+            <div class="chart-tag">EduEval Avg / 100</div>
+          </div>
+          <div class="chart-body">
+            <div class="cbar"><div class="cbar-name">Base (no SFT)</div><div class="cbar-wrap"><div class="cbar-fill cbar-dim" style="width:21.0%"></div></div><div class="cbar-val">20.98</div></div>
+            <div class="cbar"><div class="cbar-name">Llama3.1-8B-Instruct</div><div class="cbar-wrap"><div class="cbar-fill cbar-instruct" style="width:27.3%"></div></div><div class="cbar-val">27.31</div></div>
+            <div class="cbar-divider"><span>+ 2,300 SFT samples from:</span></div>
+            <div class="cbar"><div class="cbar-name">LMSYS</div><div class="cbar-wrap"><div class="cbar-fill" style="width:29.9%"></div></div><div class="cbar-val">29.85</div></div>
+            <div class="cbar"><div class="cbar-name">UltraChat</div><div class="cbar-wrap"><div class="cbar-fill" style="width:31.9%"></div></div><div class="cbar-val">31.87</div></div>
+            <div class="cbar"><div class="cbar-name">DataFlow-10K</div><div class="cbar-wrap"><div class="cbar-fill" style="width:34.5%"></div></div><div class="cbar-val">34.53</div></div>
+            <div class="cbar"><div class="cbar-name">Infinity-Instruct</div><div class="cbar-wrap"><div class="cbar-fill" style="width:37.3%"></div></div><div class="cbar-val">37.33</div></div>
+            <div class="cbar"><div class="cbar-name">SmolTalk</div><div class="cbar-wrap"><div class="cbar-fill" style="width:37.6%"></div></div><div class="cbar-val">37.64</div></div>
+            <div class="cbar"><div class="cbar-name">Tulu-3-SFT</div><div class="cbar-wrap"><div class="cbar-fill" style="width:37.7%"></div></div><div class="cbar-val">37.68</div></div>
+            <div class="cbar"><div class="cbar-name">WizardLM</div><div class="cbar-wrap"><div class="cbar-fill" style="width:38.6%"></div></div><div class="cbar-val">38.58</div></div>
+            <div class="cbar"><div class="cbar-name">OpenHermes-2.5</div><div class="cbar-wrap"><div class="cbar-fill" style="width:40.1%"></div></div><div class="cbar-val">40.05</div></div>
+            <div class="cbar cbar-best"><div class="cbar-name">K12-Train (ours) <i class="fa-solid fa-trophy"></i></div><div class="cbar-wrap"><div class="cbar-fill cbar-ours" style="width:40.9%"></div></div><div class="cbar-val">40.90</div></div>
+          </div>
+          <div class="chart-delta">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <b>+0.85</b> over strongest baseline (OpenHermes) &middot;
+            <b>+13.59</b> over Llama3.1-8B-Instruct
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-summary">
+      <i class="fa-solid fa-star"></i>
+      <div>
+        <b>Takeaway.</b> At an equal 2.3k-sample budget, K12-Train is the only corpus
+        that wins on <i>both</i> GaokaoBench and EduEval and on <i>both</i> backbones,
+        pointing to curriculum-grounded synthesis as the right recipe for educational SFT.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXAMPLE ================= -->
+<section id="example" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">07</span> Example</h2>
     <div class="example-wrap">
       <img src="assets/example.png" alt="Example K12-Bench question and K12-Train pair derived from a subgraph." />
       <div class="fig-caption">An end-to-end example: KG subgraph &rarr; multi-select benchmark item &rarr; KG-guided training pair.</div>
@@ -638,9 +883,9 @@
 </section>
 
 <!-- ================= DATA ACCESS ================= -->
-<section id="access" class="section section-alt">
+<section id="access" class="section">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">07</span> Access &amp; Licensing</h2>
+    <h2 class="section-title"><span class="section-num">08</span> Access &amp; Licensing</h2>
     <div class="access-grid">
       <a class="access-card" href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener">
         <i class="fa-solid fa-cube"></i>
@@ -668,9 +913,9 @@
 </section>
 
 <!-- ================= PAPER / BIBTEX ================= -->
-<section id="paper" class="section">
+<section id="paper" class="section section-alt">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">08</span> Paper &amp; Citation</h2>
+    <h2 class="section-title"><span class="section-num">09</span> Paper &amp; Citation</h2>
     <p class="paper-note">
       <i class="fa-solid fa-circle-info"></i>
       A preprint will be released on arXiv. In the meantime, please cite the
@@ -732,6 +977,17 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
     document.querySelectorAll('.tab-panel').forEach(p => {
       p.classList.toggle('active', p.dataset.panel === target);
+    });
+  });
+});
+
+// Tab switching for the Results section
+document.querySelectorAll('.rtab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.rtab;
+    document.querySelectorAll('.rtab-btn').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.rpanel').forEach(p => {
+      p.classList.toggle('active', p.dataset.rpanel === target);
     });
   });
 });
