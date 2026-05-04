@@ -216,10 +216,375 @@
   </div>
 </section>
 
+<!-- ================= DATA EXPLORER ================= -->
+<section id="explore" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">04</span> Explore the Data</h2>
+    <p class="explore-lead">
+      Real samples straight from the dataset. Switch between tabs to see
+      graph nodes, graph edges, benchmark items, and training pairs.
+    </p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="nodes" role="tab">
+        <i class="fa-solid fa-circle-nodes"></i> Nodes
+      </button>
+      <button class="tab-btn" data-tab="edges" role="tab">
+        <i class="fa-solid fa-link"></i> Edges
+      </button>
+      <button class="tab-btn" data-tab="bench" role="tab">
+        <i class="fa-solid fa-list-check"></i> Benchmark
+      </button>
+      <button class="tab-btn" data-tab="train" role="tab">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Training
+      </button>
+    </div>
+
+    <!-- ===== NODES TAB ===== -->
+    <div class="tab-panel active" data-panel="nodes">
+      <p class="panel-sub">
+        Seven node types cover concepts, skills, exercises, experiments, and the full
+        textbook hierarchy (section &rarr; chapter &rarr; book).
+      </p>
+
+      <div class="sample-grid sample-grid-3">
+        <div class="sample-card sc-concept">
+          <div class="sc-head">
+            <span class="sc-type">Concept</span>
+            <span class="sc-id">math_7a_rjb_cpt1</span>
+          </div>
+          <div class="sc-name">正数</div>
+          <div class="sc-field"><b>Definition:</b> 大于 0 的数叫做正数。有时为了明确意义，也可以在前面加 "+" 号。</div>
+          <div class="sc-field"><b>Importance:</b> 掌握</div>
+          <div class="sc-field"><b>Examples:</b> <code>3</code> · <code>1.8%</code> · <code>+3</code> · <code>+0.5</code></div>
+        </div>
+
+        <div class="sample-card sc-skill">
+          <div class="sc-head">
+            <span class="sc-type">Skill</span>
+            <span class="sc-id">math_7a_rjb_skl1</span>
+          </div>
+          <div class="sc-name">用正负数表示实际问题中的相反量</div>
+          <div class="sc-field"><b>Description:</b> 根据量的方向或意义（如增减、收入支出、上升下降）选择用正数或负数表达。</div>
+        </div>
+
+        <div class="sample-card sc-exercise">
+          <div class="sc-head">
+            <span class="sc-type">Exercise</span>
+            <span class="sc-id">math_7a_rjb_exe1</span>
+          </div>
+          <div class="sc-name">一个月内，小明体重增加 2kg，小华体重减少 1kg，小强体重无变化，写出他们这个月的体重增长值。</div>
+          <div class="sc-field"><b>Answer:</b> 小明: 2kg; 小华: -1kg; 小强: 0kg.</div>
+          <div class="sc-field"><b>Difficulty:</b> 1 &middot; <b>Type:</b> 应用题</div>
+        </div>
+
+        <div class="sample-card sc-book">
+          <div class="sc-head">
+            <span class="sc-type">Book</span>
+            <span class="sc-id">math_7a_rjb</span>
+          </div>
+          <div class="sc-name">七年级上册</div>
+          <div class="sc-field"><b>Subject:</b> 数学 &middot; <b>Grade:</b> 七年级上册</div>
+          <div class="sc-field"><b>Publisher:</b> 人教版 · 人民教育出版社</div>
+        </div>
+
+        <div class="sample-card sc-chapter">
+          <div class="sc-head">
+            <span class="sc-type">Chapter</span>
+            <span class="sc-id">math_7a_rjb_ch1</span>
+          </div>
+          <div class="sc-name">第一章 有理数</div>
+          <div class="sc-field sc-muted">Container node grouping sections within a book.</div>
+        </div>
+
+        <div class="sample-card sc-section">
+          <div class="sc-head">
+            <span class="sc-type">Section</span>
+            <span class="sc-id">math_7a_rjb_ch1_s1</span>
+          </div>
+          <div class="sc-name">第一节 正数和负数</div>
+          <div class="sc-field sc-muted">Leaf of the textbook hierarchy; concepts/skills anchor here via <code>appears_in</code>.</div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="legend-item"><span class="dot d1"></span>Concept</span>
+        <span class="legend-item"><span class="dot d2"></span>Skill</span>
+        <span class="legend-item"><span class="dot d3"></span>Exercise</span>
+        <span class="legend-item"><span class="dot d4"></span>Experiment</span>
+        <span class="legend-item"><span class="dot dh"></span>Section / Chapter / Book</span>
+      </div>
+    </div>
+
+    <!-- ===== EDGES TAB ===== -->
+    <div class="tab-panel" data-panel="edges">
+      <p class="panel-sub">
+        Nine relation types capture how textbook knowledge hangs together, from
+        prerequisite order to which concepts an exercise actually tests.
+      </p>
+
+      <div class="edge-grid">
+        <div class="edge-row">
+          <div class="edge-type"><code>is_a</code></div>
+          <div class="edge-flow">
+            <span class="node-pill">整数</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">有理数</span>
+          </div>
+          <div class="edge-note">evidence: "整数和分数统称为有理数。"</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>prerequisites_for</code></div>
+          <div class="edge-flow">
+            <span class="node-pill">正数</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">相反意义的量</span>
+          </div>
+          <div class="edge-note">evidence: "如果一个问题中出现相反意义的量，我们可以用正数和负数分别表示它们。"</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>relates_to</code></div>
+          <div class="edge-flow">
+            <span class="node-pill">正数</span>
+            <span class="arrow">&harr;</span>
+            <span class="node-pill">负数</span>
+          </div>
+          <div class="edge-note">relation: "正数与负数是相对的概念" &middot; evidence: "'负'与'正'相对。"</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>tests_concept</code></div>
+          <div class="edge-flow">
+            <span class="node-pill pill-exe">Exercise math_7a_rjb_exe1</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">正数</span>
+            <span class="node-pill">负数</span>
+            <span class="node-pill">0</span>
+          </div>
+          <div class="edge-note">One exercise can point to multiple concepts it exercises.</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>tests_skill</code></div>
+          <div class="edge-flow">
+            <span class="node-pill pill-exe">Exercise math_7a_rjb_exe1</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill pill-skl">用正负数表示实际问题中的相反量</span>
+          </div>
+          <div class="edge-note">Links each exercise to the skill it is designed to practise.</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>appears_in</code></div>
+          <div class="edge-flow">
+            <span class="node-pill">正数</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill pill-sec">第一节 正数和负数</span>
+          </div>
+          <div class="edge-note">Grounds every concept/skill/exercise back to a textbook section.</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>is_part_of</code></div>
+          <div class="edge-flow">
+            <span class="node-pill pill-sec">第一节 正数和负数</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill pill-sec">第一章 有理数</span>
+          </div>
+          <div class="edge-note">Hierarchy spine: Section &rarr; Chapter &rarr; Book.</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>verifies</code></div>
+          <div class="edge-flow">
+            <span class="node-pill pill-exp">Experiment</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">Concept / Law</span>
+          </div>
+          <div class="edge-note">Typical in Physics / Chemistry / Biology, e.g. 实验 4-1 verifies 盐桥作用.</div>
+        </div>
+
+        <div class="edge-row">
+          <div class="edge-type"><code>leads_to</code></div>
+          <div class="edge-flow">
+            <span class="node-pill">Earlier concept</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">Later concept</span>
+          </div>
+          <div class="edge-note">Cross-chapter conceptual progression within a subject.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BENCHMARK TAB ===== -->
+    <div class="tab-panel" data-panel="bench">
+      <p class="panel-sub">
+        All K12-Bench items are multi-select. Each item is derived from a KG subgraph,
+        so the answer key is auditable and distractors can be generated systematically.
+      </p>
+
+      <div class="q-grid">
+        <!-- Task 1 -->
+        <div class="q-card">
+          <div class="q-task"><span class="q-tag t1">Task 1 · Ground</span> <span class="q-meta">Physics</span></div>
+          <div class="q-stem">【写出 Po-210 的 β 衰变方程。】这道题考察了什么核心方法？</div>
+          <ul class="q-opts">
+            <li><span class="opt-key">A</span> 根据光电效应方程分析实验规律</li>
+            <li><span class="opt-key">B</span> 统计分析方法</li>
+            <li><span class="opt-key">C</span> 能量守恒分析方法</li>
+            <li class="opt-correct"><span class="opt-key">D</span> 核反应方程书写方法 <i class="fa-solid fa-check"></i></li>
+          </ul>
+          <div class="q-ans"><b>Answer:</b> D</div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="q-card">
+          <div class="q-task"><span class="q-tag t2">Task 2 · Prereq</span> <span class="q-meta">Physics</span></div>
+          <div class="q-stem">要掌握物理中的【熵】，应先具备哪些基础？</div>
+          <ul class="q-opts">
+            <li class="opt-correct"><span class="opt-key">A</span> 微观态与宏观态 <i class="fa-solid fa-check"></i></li>
+            <li><span class="opt-key">B</span> 熵增加原理</li>
+            <li><span class="opt-key">C</span> 热力学第二定律</li>
+            <li><span class="opt-key">D</span> 功与热的等效性</li>
+          </ul>
+          <div class="q-ans"><b>Answer:</b> A</div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="q-card">
+          <div class="q-task"><span class="q-tag t3">Task 3 · Neighbor</span> <span class="q-meta">Biology</span></div>
+          <div class="q-stem">以下哪些概念与生物学中的【多倍体】<b>直接相关</b>（包括分类关系或紧密关联）？</div>
+          <ul class="q-opts">
+            <li class="opt-correct"><span class="opt-key">A</span> 三倍体不育（无子果实形成原因） <i class="fa-solid fa-check"></i></li>
+            <li class="opt-correct"><span class="opt-key">B</span> 四倍体 <i class="fa-solid fa-check"></i></li>
+            <li class="opt-correct"><span class="opt-key">C</span> 染色体组（非同源染色体组） <i class="fa-solid fa-check"></i></li>
+            <li class="opt-correct"><span class="opt-key">D</span> 人工诱导多倍体 <i class="fa-solid fa-check"></i></li>
+          </ul>
+          <div class="q-ans"><b>Answer:</b> A, B, C, D</div>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="q-card">
+          <div class="q-task"><span class="q-tag t4">Task 4 · Evidence</span> <span class="q-meta">Chemistry</span></div>
+          <div class="q-stem">以下哪些实验可以验证【盐桥】？</div>
+          <ul class="q-opts">
+            <li><span class="opt-key">A</span> 牺牲阳极法电解实验（实验 4-4 部分）</li>
+            <li class="opt-correct"><span class="opt-key">B</span> 实验 4-1 锌铜原电池中盐桥作用的探究 <i class="fa-solid fa-check"></i></li>
+            <li><span class="opt-key">C</span> 铁钉的吸氧腐蚀实验（实验 4-3 部分）</li>
+            <li><span class="opt-key">D</span> CuCl₂ 溶液的电解实验（实验 4-2）</li>
+          </ul>
+          <div class="q-ans"><b>Answer:</b> B</div>
+        </div>
+
+        <!-- Task 5 -->
+        <div class="q-card">
+          <div class="q-task"><span class="q-tag t5">Task 5 · Locate</span> <span class="q-meta">Physics</span></div>
+          <div class="q-stem">学生第一次学习物理中的【熵】是在以下哪个章节？</div>
+          <ul class="q-opts">
+            <li><span class="opt-key">A</span> 第二节 热力学第一定律</li>
+            <li class="opt-correct"><span class="opt-key">B</span> 第四节 热力学第二定律 <i class="fa-solid fa-check"></i></li>
+            <li><span class="opt-key">C</span> 第三节 能量守恒定律</li>
+            <li><span class="opt-key">D</span> 第一节 功、热和内能的改变</li>
+          </ul>
+          <div class="q-ans"><b>Answer:</b> B</div>
+        </div>
+
+        <!-- Bonus: Task 4 subtask 1 alt -->
+        <div class="q-card">
+          <div class="q-task"><span class="q-tag t4">Task 4 · Evidence</span> <span class="q-meta">Chemistry</span></div>
+          <div class="q-stem">教材中哪个实验验证了【盐的类型】原理？</div>
+          <ul class="q-opts">
+            <li><span class="opt-key">A</span> 反应条件对 FeCl₃ 水解平衡的影响</li>
+            <li><span class="opt-key">B</span> 实验 3-2 醋酸与碳酸钠溶液反应</li>
+            <li><span class="opt-key">C</span> 实验 3-1 比较盐酸和醋酸的电离程度</li>
+            <li class="opt-correct"><span class="opt-key">D</span> 不同盐溶液酸碱性的测试与分类 <i class="fa-solid fa-check"></i></li>
+          </ul>
+          <div class="q-ans"><b>Answer:</b> D</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TRAIN TAB ===== -->
+    <div class="tab-panel" data-panel="train">
+      <p class="panel-sub">
+        K12-Train pairs are synthesized by anchoring a question / answer to a concept
+        (node-centric) or a relation (edge-centric) drawn from K12-KGraph. Both styles
+        keep the answer grounded in textbook knowledge.
+      </p>
+
+      <div class="train-grid">
+
+        <div class="train-card">
+          <div class="tc-head">
+            <span class="tc-badge tc-node">Node-centric</span>
+            <span class="tc-id">node_item_1</span>
+          </div>
+          <div class="tc-anchor"><b>Anchor concept:</b> <span class="node-pill">秒</span></div>
+          <div class="tc-q"><b>Q:</b> 秒是什么时间单位？</div>
+          <div class="tc-a"><b>A:</b> <span class="boxed">秒是一种计量很短时间的基本单位</span>。它是我们用来测量瞬间或短暂事件的时间单位。</div>
+        </div>
+
+        <div class="train-card">
+          <div class="tc-head">
+            <span class="tc-badge tc-edge">Edge-centric</span>
+            <span class="tc-id">edge_item_1</span>
+          </div>
+          <div class="tc-anchor">
+            <b>Anchor edge:</b>
+            <code>is_a</code>
+            <span class="node-pill">毫米</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">厘米</span>
+          </div>
+          <div class="tc-q"><b>Q:</b> 为什么说毫米是厘米的更小单位？</div>
+          <div class="tc-a"><b>A:</b> 因为厘米是长度单位，毫米也是长度单位，且 1 厘米等于 10 毫米，所以毫米是厘米的更小单位。</div>
+        </div>
+
+        <div class="train-card">
+          <div class="tc-head">
+            <span class="tc-badge tc-node">Node-centric</span>
+            <span class="tc-id">example (math)</span>
+          </div>
+          <div class="tc-anchor"><b>Anchor concept:</b> <span class="node-pill">有理数</span></div>
+          <div class="tc-q"><b>Q:</b> 什么是有理数？它和整数、分数之间是什么关系？</div>
+          <div class="tc-a"><b>A:</b> <span class="boxed">整数和分数统称为有理数</span>。也就是说，整数和分数都是有理数的子集，它们合在一起构成有理数这一更大的类别。</div>
+        </div>
+
+        <div class="train-card">
+          <div class="tc-head">
+            <span class="tc-badge tc-edge">Edge-centric</span>
+            <span class="tc-id">example (physics)</span>
+          </div>
+          <div class="tc-anchor">
+            <b>Anchor edge:</b>
+            <code>prerequisites_for</code>
+            <span class="node-pill">微观态与宏观态</span>
+            <span class="arrow">&rarr;</span>
+            <span class="node-pill">熵</span>
+          </div>
+          <div class="tc-q"><b>Q:</b> 在学习"熵"之前，为什么应该先掌握"微观态与宏观态"？</div>
+          <div class="tc-a"><b>A:</b> 熵从微观角度描述了一个宏观态对应的微观态数目的多少。没有"微观态与宏观态"这一前置概念，就无法从统计力学的角度理解熵所度量的"无序程度"。</div>
+        </div>
+      </div>
+
+      <div class="train-callout">
+        <i class="fa-solid fa-seedling"></i>
+        <div>
+          Despite being small (~2,300 pairs), K12-Train consistently outperforms
+          equally sized subsets of <b>eight mainstream SFT corpora</b> on GaokaoBench
+          and EduEval across two backbones.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= RESULTS ================= -->
 <section id="results" class="section section-alt">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">04</span> Key Findings</h2>
+    <h2 class="section-title"><span class="section-num">05</span> Key Findings</h2>
 
     <div class="finding-grid">
       <div class="finding">
@@ -264,7 +629,7 @@
 <!-- ================= EXAMPLE ================= -->
 <section id="example" class="section">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">05</span> Example</h2>
+    <h2 class="section-title"><span class="section-num">06</span> Example</h2>
     <div class="example-wrap">
       <img src="assets/example.png" alt="Example K12-Bench question and K12-Train pair derived from a subgraph." />
       <div class="fig-caption">An end-to-end example: KG subgraph &rarr; multi-select benchmark item &rarr; KG-guided training pair.</div>
@@ -275,7 +640,7 @@
 <!-- ================= DATA ACCESS ================= -->
 <section id="access" class="section section-alt">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">06</span> Access &amp; Licensing</h2>
+    <h2 class="section-title"><span class="section-num">07</span> Access &amp; Licensing</h2>
     <div class="access-grid">
       <a class="access-card" href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener">
         <i class="fa-solid fa-cube"></i>
@@ -305,7 +670,7 @@
 <!-- ================= PAPER / BIBTEX ================= -->
 <section id="paper" class="section">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">07</span> Paper &amp; Citation</h2>
+    <h2 class="section-title"><span class="section-num">08</span> Paper &amp; Citation</h2>
     <p class="paper-note">
       <i class="fa-solid fa-circle-info"></i>
       A preprint will be released on arXiv. In the meantime, please cite the
@@ -359,6 +724,17 @@ function copyBib() {
     setTimeout(() => label.innerText = prev, 1600);
   });
 }
+
+// Tab switching for the Explore section
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.tab-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.panel === target);
+    });
+  });
+});
 </script>
 </body>
 </html>
