@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>K12-KGraph · Curriculum-Aligned Knowledge Graph for Educational LLMs</title>
+<meta name="description" content="K12-KGraph is a curriculum-aligned knowledge graph built from official Chinese K-12 textbooks, paired with K12-Bench for evaluating curriculum cognition and K12-Train for KG-guided supervised fine-tuning." />
+<meta property="og:title" content="K12-KGraph: Curriculum-Aligned Knowledge Graph for Educational LLMs" />
+<meta property="og:description" content="A curriculum-aligned KG with 10,685 nodes and 23,278 edges, a 23,640-question benchmark, and 2,267 KG-guided SFT pairs." />
+<meta property="og:image" content="assets/KGraph.png" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="badge-row">
+      <span class="chip chip-accent"><i class="fa-solid fa-graduation-cap"></i> Educational AI</span>
+      <span class="chip"><i class="fa-solid fa-diagram-project"></i> Knowledge Graph</span>
+      <span class="chip"><i class="fa-solid fa-database"></i> Benchmark &amp; Training Data</span>
+    </div>
+    <h1 class="hero-title">K12-KGraph</h1>
+    <p class="hero-subtitle">
+      A Curriculum-Aligned Knowledge Graph for
+      <span class="gradient-text">Benchmarking &amp; Training</span>
+      Educational LLMs
+    </p>
+    <p class="hero-meta">
+      Built from official People's Education Press (PEP) Chinese K–12 textbooks
+      across <b>Mathematics</b>, <b>Physics</b>, <b>Chemistry</b>, and <b>Biology</b>.
+    </p>
+
+    <div class="author-row">
+      <div class="author">
+        <span class="author-name">Hao Liang</span>
+        <span class="author-aff">Peking University</span>
+      </div>
+    </div>
+
+    <div class="link-row">
+      <a class="btn btn-primary" href="https://github.com/haolpku/K12-Dataset" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i> Code
+      </a>
+      <a class="btn btn-primary" href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener">
+        <i class="fa-solid fa-cube"></i> Dataset
+      </a>
+      <a class="btn btn-ghost" href="#paper">
+        <i class="fa-solid fa-file-lines"></i> Paper
+      </a>
+      <a class="btn btn-ghost" href="#bibtex">
+        <i class="fa-solid fa-quote-right"></i> BibTeX
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= AT-A-GLANCE ================= -->
+<section class="stats container">
+  <div class="stat-card">
+    <div class="stat-num">10,685</div>
+    <div class="stat-label">KG nodes</div>
+    <div class="stat-sub">7 node types</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">23,278</div>
+    <div class="stat-label">KG edges</div>
+    <div class="stat-sub">9 relation types</div>
+  </div>
+  <div class="stat-card stat-hl">
+    <div class="stat-num">23,640</div>
+    <div class="stat-label">Bench questions</div>
+    <div class="stat-sub">5 task families</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">2,267</div>
+    <div class="stat-label">Train pairs</div>
+    <div class="stat-sub">KG-guided SFT</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Subjects</div>
+    <div class="stat-sub">Math · Phys · Chem · Bio</div>
+  </div>
+</section>
+
+<!-- ================= ABSTRACT / OVERVIEW ================= -->
+<section id="overview" class="section">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">01</span> Overview</h2>
+    <div class="overview-grid">
+      <div class="overview-text">
+        <p>
+          Large language models have strong factual recall but often fail on
+          <b>curriculum cognition</b>: which concepts come first, which skills a
+          problem tests, and where a topic sits in the textbook hierarchy.
+          K12-KGraph is a three-part resource that grounds evaluation and training
+          in structured textbook knowledge.
+        </p>
+        <ul class="feature-list">
+          <li>
+            <i class="fa-solid fa-sitemap"></i>
+            <div>
+              <b>K12-KGraph.</b> 10,685 nodes and 23,278 edges extracted from
+              official PEP textbooks with OCR, schema-constrained LLM extraction,
+              and human verification.
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-list-check"></i>
+            <div>
+              <b>K12-Bench.</b> 23,640 multi-select questions across five
+              curriculum tasks: <i>Ground</i>, <i>Prereq</i>, <i>Neighbor</i>,
+              <i>Evidence</i>, and <i>Locate</i>.
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <div>
+              <b>K12-Train.</b> 2,267 KG-guided SFT pairs that outperform
+              same-sized subsets of 8 mainstream SFT corpora on GaokaoBench and
+              EduEval.
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="overview-figure">
+        <img src="assets/KGraph.png" alt="K12-KGraph schema illustration" />
+        <div class="fig-caption">Schema of K12-KGraph: 7 node types &amp; 9 relations grounded in textbook structure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THREE CARDS ================= -->
+<section id="resources" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">02</span> Three Resources</h2>
+    <div class="card-grid">
+
+      <div class="card card-kg">
+        <div class="card-head">
+          <i class="fa-solid fa-diagram-project card-icon"></i>
+          <h3>K12-KGraph</h3>
+          <div class="card-tag">Knowledge Graph</div>
+        </div>
+        <p>A curriculum-aligned KG over four subjects, distilled from the official PEP textbook corpus.</p>
+        <ul class="mini-list">
+          <li><b>Nodes:</b> Concept, Skill, Experiment, Exercise, Section, Chapter, Book</li>
+          <li><b>Relations:</b> is_a, prerequisites_for, relates_to, verifies, tests_concept, tests_skill, appears_in, is_part_of, leads_to</li>
+          <li><b>Quality:</b> OCR + schema-constrained extraction + structural validation + expert review</li>
+        </ul>
+      </div>
+
+      <div class="card card-bench">
+        <div class="card-head">
+          <i class="fa-solid fa-list-check card-icon"></i>
+          <h3>K12-Bench</h3>
+          <div class="card-tag">Evaluation</div>
+        </div>
+        <p>23,640 multi-select questions that isolate five dimensions of curriculum cognition.</p>
+        <ul class="mini-list task-list">
+          <li><span class="dot d1"></span><b>Ground</b> · which concepts does the question assume?</li>
+          <li><span class="dot d2"></span><b>Prereq</b> · what must be learned first?</li>
+          <li><span class="dot d3"></span><b>Neighbor</b> · what is structurally adjacent?</li>
+          <li><span class="dot d4"></span><b>Evidence</b> · which sections justify the answer?</li>
+          <li><span class="dot d5"></span><b>Locate</b> · where in the textbook does this appear?</li>
+        </ul>
+      </div>
+
+      <div class="card card-train">
+        <div class="card-head">
+          <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
+          <h3>K12-Train</h3>
+          <div class="card-tag">SFT Data</div>
+        </div>
+        <p>2,267 compact, KG-guided QA pairs designed to teach curriculum-aware reasoning.</p>
+        <ul class="mini-list">
+          <li><b>Source:</b> Synthesized on top of K12-KGraph subgraphs</li>
+          <li><b>Efficiency:</b> Beats 8 mainstream SFT corpora at equal budget</li>
+          <li><b>Validated on:</b> GaokaoBench &amp; EduEval across two backbones</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENCHMARK DETAILS ================= -->
+<section id="benchmark" class="section">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">03</span> K12-Bench at a Glance</h2>
+    <div class="bench-grid">
+      <div class="bench-text">
+        <p>
+          Each K12-Bench question is derived deterministically from a K12-KGraph
+          subgraph, which keeps answer keys auditable and makes the benchmark
+          difficulty controllable by subject, grade, and task family.
+        </p>
+        <p>
+          The benchmark is balanced across four subjects and five task families,
+          giving a compact yet rigorous probe of curriculum cognition in LLMs.
+        </p>
+      </div>
+      <div class="bench-figure">
+        <img src="assets/benchmark_distribution_panels.png" alt="K12-Bench distribution across subjects, tasks, and difficulty." />
+        <div class="fig-caption">Coverage of K12-Bench across subjects and the five curriculum tasks.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section id="results" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">04</span> Key Findings</h2>
+
+    <div class="finding-grid">
+      <div class="finding">
+        <div class="finding-num">46%</div>
+        <div class="finding-body">
+          <b>Curriculum cognition is an open gap.</b>
+          Even the strongest open-source model only reaches roughly 46% exact
+          match on K12-Bench, despite near-saturated factual recall on standard
+          K-12 knowledge tests.
+        </div>
+      </div>
+      <div class="finding">
+        <div class="finding-num">2.3k</div>
+        <div class="finding-body">
+          <b>Sample-efficient training.</b>
+          About 2,300 K12-Train examples surpass equally sized subsets of
+          <i>eight</i> mainstream SFT corpora on both GaokaoBench and EduEval.
+        </div>
+      </div>
+      <div class="finding">
+        <div class="finding-num">2&times;</div>
+        <div class="finding-body">
+          <b>Consistent across backbones.</b>
+          Gains transfer across two model families (Qwen and LLaMA-based) and
+          scale from 7B to larger instruction-tuned checkpoints.
+        </div>
+      </div>
+    </div>
+
+    <div class="results-callout">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>
+        <b>Takeaway.</b> Grounding both evaluation <i>and</i> supervision in a
+        curriculum-aligned KG is a promising recipe for
+        <span class="gradient-text">curriculum-aware educational AI</span>, well
+        beyond the Chinese K–12 setting.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXAMPLE ================= -->
+<section id="example" class="section">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">05</span> Example</h2>
+    <div class="example-wrap">
+      <img src="assets/example.png" alt="Example K12-Bench question and K12-Train pair derived from a subgraph." />
+      <div class="fig-caption">An end-to-end example: KG subgraph &rarr; multi-select benchmark item &rarr; KG-guided training pair.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DATA ACCESS ================= -->
+<section id="access" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">06</span> Access &amp; Licensing</h2>
+    <div class="access-grid">
+      <a class="access-card" href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener">
+        <i class="fa-solid fa-cube"></i>
+        <h4>Hugging Face</h4>
+        <p>Graph, benchmark, and training splits in one repo.</p>
+        <span class="link-arrow">Open dataset <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a class="access-card" href="https://github.com/haolpku/K12-Dataset" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i>
+        <h4>GitHub</h4>
+        <p>Construction pipeline, evaluation scripts, training recipes.</p>
+        <span class="link-arrow">View code <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <div class="access-card access-static">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <h4>License</h4>
+        <p>
+          Dataset: <b>CC BY-NC-SA 4.0</b><br />
+          Code: <b>MIT</b>
+        </p>
+        <span class="muted">Research use; see repo for full terms.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAPER / BIBTEX ================= -->
+<section id="paper" class="section">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">07</span> Paper &amp; Citation</h2>
+    <p class="paper-note">
+      <i class="fa-solid fa-circle-info"></i>
+      A preprint will be released on arXiv. In the meantime, please cite the
+      technical report below.
+    </p>
+
+    <div id="bibtex" class="bibtex-card">
+      <div class="bibtex-head">
+        <span><i class="fa-solid fa-quote-right"></i> BibTeX</span>
+        <button class="copy-btn" onclick="copyBib()">
+          <i class="fa-regular fa-copy"></i> <span id="copy-label">Copy</span>
+        </button>
+      </div>
+<pre id="bibtex-block">@techreport{liang2026k12kgraph,
+  title  = {K12-KGraph: A Curriculum-Aligned Knowledge Graph for
+            Benchmarking and Training Educational LLMs},
+  author = {Liang, Hao},
+  year   = {2026},
+  institution = {Peking University},
+  url    = {https://github.com/haolpku/K12-Dataset}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-title">K12-KGraph</div>
+      <div class="footer-sub">Curriculum-aligned KG &middot; Benchmark &middot; Training data</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/haolpku/K12-Dataset" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+      <a href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener"><i class="fa-solid fa-cube"></i></a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Hao Liang, Peking University.<br />
+      Page template inspired by academic project pages; content CC BY-NC-SA 4.0.
+    </div>
+  </div>
+</footer>
+
+<script>
+function copyBib() {
+  const text = document.getElementById('bibtex-block').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const label = document.getElementById('copy-label');
+    const prev = label.innerText;
+    label.innerText = 'Copied!';
+    setTimeout(() => label.innerText = prev, 1600);
+  });
+}
+</script>
+</body>
+</html>
