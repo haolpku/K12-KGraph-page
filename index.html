@@ -45,11 +45,14 @@
     </div>
 
     <div class="link-row">
-      <a class="btn btn-primary" href="https://github.com/haolpku/K12-Dataset" target="_blank" rel="noopener">
+      <a class="btn btn-primary" href="https://github.com/haolpku/K12-KGraph" target="_blank" rel="noopener">
         <i class="fa-brands fa-github"></i> Code
       </a>
       <a class="btn btn-primary" href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener">
         <i class="fa-solid fa-cube"></i> Dataset
+      </a>
+      <a class="btn btn-primary" href="#models">
+        <i class="fa-solid fa-robot"></i> Models
       </a>
       <a class="btn btn-ghost" href="#paper">
         <i class="fa-solid fa-file-lines"></i> Paper
@@ -871,10 +874,53 @@
   </div>
 </section>
 
-<!-- ================= EXAMPLE ================= -->
-<section id="example" class="section section-alt">
+<!-- ================= RELEASED MODELS ================= -->
+<section id="models" class="section section-alt">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">07</span> Example</h2>
+    <h2 class="section-title"><span class="section-num">07</span> Released Checkpoints</h2>
+    <p class="models-lead">
+      Ready-to-use models trained on <b>K12-Train</b>. Each Hugging Face repository is a
+      standalone checkpoint with its tokenizer, chat template, and complete or merged weights.
+    </p>
+    <div class="model-grid">
+      <a class="model-card" href="https://huggingface.co/lhpku20010120/llama3.1-8b-k12kgraph" target="_blank" rel="noopener">
+        <div class="model-card-top">
+          <span class="model-family"><i class="fa-solid fa-robot"></i> Llama 3.1</span>
+          <span class="model-size">8B</span>
+        </div>
+        <h3>Llama3.1-8B-K12KGraph</h3>
+        <p>Full-parameter SFT checkpoint for bilingual K–12 educational question answering.</p>
+        <div class="model-meta"><span>Full SFT</span><span>16.1 GB</span><span>Llama 3.1</span></div>
+        <span class="model-link"><i class="fa-solid fa-cube"></i> Open on Hugging Face <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a class="model-card model-card-featured" href="https://huggingface.co/lhpku20010120/qwen3.5-2b-k12kgraph" target="_blank" rel="noopener">
+        <div class="model-card-top">
+          <span class="model-family"><i class="fa-solid fa-bolt"></i> Qwen 3.5</span>
+          <span class="model-size">2B</span>
+        </div>
+        <h3>Qwen3.5-2B-K12KGraph</h3>
+        <p>Compact multimodal backbone with the K12-Train LoRA adapter merged into the released weights.</p>
+        <div class="model-meta"><span>Merged LoRA</span><span>4.4 GB</span><span>Apache-2.0</span></div>
+        <span class="model-link"><i class="fa-solid fa-cube"></i> Open on Hugging Face <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a class="model-card" href="https://huggingface.co/lhpku20010120/qwen3-4b-k12kgraph" target="_blank" rel="noopener">
+        <div class="model-card-top">
+          <span class="model-family"><i class="fa-solid fa-robot"></i> Qwen 3</span>
+          <span class="model-size">4B</span>
+        </div>
+        <h3>Qwen3-4B-K12KGraph</h3>
+        <p>Full-parameter SFT checkpoint balancing compact deployment and curriculum-aware generation.</p>
+        <div class="model-meta"><span>Full SFT</span><span>8.0 GB</span><span>Apache-2.0</span></div>
+        <span class="model-link"><i class="fa-solid fa-cube"></i> Open on Hugging Face <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXAMPLE ================= -->
+<section id="example" class="section">
+  <div class="container">
+    <h2 class="section-title"><span class="section-num">08</span> Example</h2>
     <div class="example-wrap">
       <img src="assets/example.png" alt="Example K12-Bench question and K12-Train pair derived from a subgraph." />
       <div class="fig-caption">An end-to-end example: KG subgraph &rarr; multi-select benchmark item &rarr; KG-guided training pair.</div>
@@ -883,9 +929,9 @@
 </section>
 
 <!-- ================= DATA ACCESS ================= -->
-<section id="access" class="section">
+<section id="access" class="section section-alt">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">08</span> Access &amp; Licensing</h2>
+    <h2 class="section-title"><span class="section-num">09</span> Access &amp; Licensing</h2>
     <div class="access-grid">
       <a class="access-card" href="https://huggingface.co/datasets/lhpku20010120/K12-KGraph" target="_blank" rel="noopener">
         <i class="fa-solid fa-cube"></i>
@@ -893,7 +939,7 @@
         <p>Graph, benchmark, and training splits in one repo.</p>
         <span class="link-arrow">Open dataset <i class="fa-solid fa-arrow-right"></i></span>
       </a>
-      <a class="access-card" href="https://github.com/haolpku/K12-Dataset" target="_blank" rel="noopener">
+      <a class="access-card" href="https://github.com/haolpku/K12-KGraph" target="_blank" rel="noopener">
         <i class="fa-brands fa-github"></i>
         <h4>GitHub</h4>
         <p>Construction pipeline, evaluation scripts, training recipes.</p>
@@ -913,9 +959,9 @@
 </section>
 
 <!-- ================= PAPER / BIBTEX ================= -->
-<section id="paper" class="section section-alt">
+<section id="paper" class="section">
   <div class="container">
-    <h2 class="section-title"><span class="section-num">09</span> Paper &amp; Citation</h2>
+    <h2 class="section-title"><span class="section-num">10</span> Paper &amp; Citation</h2>
     <p class="paper-note">
       <i class="fa-solid fa-circle-info"></i>
       A preprint will be released on arXiv. In the meantime, please cite the
