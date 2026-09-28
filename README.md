@@ -3,6 +3,8 @@
 Source for the [K12-KGraph](https://github.com/haolpku/K12-KGraph) project page,
 a static site hosted on GitHub Pages.
 
+**K12-KGraph has been accepted to the NeurIPS 2026 Evaluations & Datasets Track.**
+
 - **Dataset (HF)**: https://huggingface.co/datasets/lhpku20010120/K12-KGraph
 - **Released checkpoints**:
   - https://huggingface.co/lhpku20010120/llama3.1-8b-k12kgraph
